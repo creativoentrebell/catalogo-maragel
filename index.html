@@ -354,7 +354,7 @@
       display: flex; align-items: center; justify-content: center; overflow: hidden;
     }
 
-    /* Ghost reference number in background */
+    /* Ghost reference number in background — solo visible sin foto real */
     .pc-img-wrap::after {
       content: attr(data-ref);
       position: absolute;
@@ -363,6 +363,7 @@
       color: rgba(56,56,56,0.055);
       pointer-events: none; user-select: none;
     }
+    .pc-img-wrap.has-photo::after { display: none; }
 
     .pc-img-wrap img {
       width: 85%; height: 85%; object-fit: contain; position: relative; z-index: 1;
@@ -1064,6 +1065,7 @@ function productCard(p) {
        onclick="openModal('${p.id}')">
     <div class="pc-img-wrap" data-ref="${p.referencia}">
       <img src="${p.imagen}" alt="${p.nombre}"
+           onload="this.parentElement.classList.add('has-photo')"
            onerror="this.src='${getImgSrc(p)}';this.classList.add('is-ph')">
       ${p.nuevo   ? '<div class="badge-nuevo">Nuevo</div>'    : ''}
       ${p.agotado ? '<div class="badge-agotado">Agotado</div>' : ''}
