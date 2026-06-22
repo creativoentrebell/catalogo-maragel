@@ -31,17 +31,8 @@
       height: 60px; padding: 0 28px;
       display: flex; align-items: center; justify-content: space-between;
     }
-    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .logo-mark {
-      width: 28px; height: 28px; border-radius: 50%;
-      background: var(--text);
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; font-size: 12px; font-weight: 600; letter-spacing: -0.5px;
-      flex-shrink: 0;
-    }
-    .logo-name {
-      font-size: 16px; font-weight: 600; color: var(--text); letter-spacing: -0.3px;
-    }
+    .logo { display: flex; align-items: center; text-decoration: none; }
+    .logo-img { height: 30px; width: auto; display: block; }
     .header-right {
       display: flex; align-items: center; gap: 20px;
     }
@@ -419,8 +410,7 @@
 <!-- ── HEADER ─────────────────────────────────── -->
 <header>
   <a class="logo" href="#">
-    <div class="logo-mark">M</div>
-    <span class="logo-name">Maragel</span>
+    <img src="img/Logo_Maragel-Negro.png" alt="Maragel" class="logo-img">
   </a>
   <div class="header-right">
     <span class="header-meta">Colombia · Desde 2017</span>
