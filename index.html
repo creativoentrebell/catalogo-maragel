@@ -42,15 +42,17 @@
 
     /* ── BANNER ─────────────────────────────────── */
     .banner {
-      background: #2B2B2B;
+      background: linear-gradient(to right, #222222, #555555);
       padding: 48px 28px 52px;
       position: relative; overflow: hidden;
     }
-    .banner::after {
-      content: 'M';
-      position: absolute; right: 24px; bottom: -18px;
-      font-size: 13rem; font-weight: 700; letter-spacing: -6px; line-height: 1;
-      color: rgba(255,255,255,0.05);
+    .banner-icon {
+      position: absolute; right: -10px; top: 50%;
+      transform: translateY(-50%);
+      height: 210%; width: auto;
+      filter: invert(1);
+      mix-blend-mode: screen;
+      opacity: 0.1;
       pointer-events: none; user-select: none;
     }
     .banner-eyebrow {
@@ -109,10 +111,11 @@
     }
 
     .bs-swatch {
-      position: relative; z-index: 2; width: 20%; aspect-ratio: 1 / 1.5;
+      position: relative; z-index: 2; width: 65%;
       transition: transform 0.5s cubic-bezier(0.34, 1.4, 0.64, 1);
     }
-    .bs-swatch img { width: 100%; height: 100%; object-fit: contain; }
+    .bs-swatch img { width: 100%; height: auto; object-fit: contain; }
+    .bs-swatch.is-ph { width: 22%; }
 
     .bs-info {}
     .bs-subcat {
@@ -220,8 +223,9 @@
     }
 
     .pc-img-wrap img {
-      width: 18%; height: 18%; object-fit: contain; position: relative; z-index: 1;
+      width: 85%; height: 85%; object-fit: contain; position: relative; z-index: 1;
     }
+    .pc-img-wrap img.is-ph { width: 18%; height: 18%; }
 
     .badge-agotado {
       position: absolute; top: 9px; right: 9px; z-index: 2;
@@ -307,7 +311,11 @@
       display: flex; align-items: center; justify-content: center; overflow: hidden;
     }
     .gallery-item img {
-      width: 20%; height: 20%; object-fit: contain;
+      width: 85%; height: 85%; object-fit: contain;
+    }
+    .gallery-item img.is-ph { width: 22%; height: 22%; }
+    .gallery-item.is-video video {
+      width: 100%; height: 100%; object-fit: contain; background: #181818;
     }
     .gallery-item.is-video { background: #181818; }
 
@@ -419,6 +427,7 @@
 
 <!-- ── BANNER ─────────────────────────────────── -->
 <div class="banner">
+  <img src="img/Icono_Maragel-Negro.png" alt="" class="banner-icon" aria-hidden="true">
   <span class="banner-eyebrow">Colombia · Desde 2017</span>
   <h2 class="banner-title">Color y calidad<br><em>que evolucionan.</em></h2>
 </div>
@@ -665,12 +674,16 @@ function getImgSrc(p, type='swatch') {
 /* ── RENDER BEST SELLERS ────────────────────── */
 function renderBS() {
   const items = PRODUCTOS.filter(p => p.best_seller);
-  document.getElementById('bs-grid').innerHTML = items.map(p => `
+  document.getElementById('bs-grid').innerHTML = items.map(p => {
+    const swId = 'bssw-' + p.id;
+    const fallback = getImgSrc(p);
+    return `
     <div class="bs-card" onclick="openModal('${p.id}')">
       <div class="bs-visual">
         <div class="bs-ref-ghost">${p.referencia}</div>
-        <div class="bs-swatch">
-          <img src="${getImgSrc(p)}" alt="${p.nombre}">
+        <div class="bs-swatch" id="${swId}">
+          <img src="${p.imagen}" alt="${p.nombre}"
+               onerror="this.src='${fallback}';document.getElementById('${swId}').classList.add('is-ph')">
         </div>
       </div>
       <div class="bs-info">
@@ -678,7 +691,8 @@ function renderBS() {
         <div class="bs-name">${p.nombre}</div>
         <div class="bs-price">${fmtPrice(p.precio)}</div>
       </div>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 }
 
 /* ── RENDER CATEGORY NAV ────────────────────── */
@@ -704,7 +718,8 @@ function productCard(p) {
   return `
   <div class="product-card${p.agotado?' is-agotado':''}" style="--pc:${c}" onclick="openModal('${p.id}')">
     <div class="pc-img-wrap" data-ref="${p.referencia}">
-      <img src="${getImgSrc(p)}" alt="${p.nombre}">
+      <img src="${p.imagen}" alt="${p.nombre}"
+           onerror="this.src='${getImgSrc(p)}';this.classList.add('is-ph')">
       ${p.agotado ? '<div class="badge-agotado">Agotado</div>' : ''}
       ${hasMedia ? `<div class="badge-media">${hasVideo?'▶':'⊞'} ${p.galeria.length}</div>` : ''}
     </div>
@@ -783,24 +798,34 @@ function closeModal() {
   document.body.style.overflow = '';
 }
 
+function galVideoError(el, src) {
+  el.closest('.gallery-item').innerHTML =
+    `<div class="video-ph"><div class="video-ph-btn">▶</div><div class="video-ph-label">Video no disponible</div><div class="video-ph-path">${src}</div></div>`;
+}
+
 function buildGallery() {
   const track = document.getElementById('gal-track');
   const dots  = document.getElementById('gal-dots');
 
   track.innerHTML = gItems.map((item, idx) => {
-    if (item.tipo==='video') return `
+    if (item.tipo === 'video') {
+      return `
       <div class="gallery-item is-video">
-        <div class="video-ph">
-          <div class="video-ph-btn">▶</div>
-          <div class="video-ph-label">Video demostrativo</div>
-          <div class="video-ph-path">${item.src}</div>
-        </div>
+        <video controls playsinline preload="metadata"
+               onerror="galVideoError(this,'${item.src}')">
+          <source src="${item.src}" type="video/mp4"
+                  onerror="galVideoError(this,'${item.src}')">
+        </video>
       </div>`;
-    const imgSrc = idx===1 ? getImgSrc(gProd,'nail') : getImgSrc(gProd,'swatch');
-    return `<div class="gallery-item"><img src="${imgSrc}" alt="Foto ${idx+1}"></div>`;
+    }
+    const fallback = idx === 1 ? getImgSrc(gProd, 'nail') : getImgSrc(gProd, 'swatch');
+    return `<div class="gallery-item">
+      <img src="${item.src}" alt="Foto ${idx+1}"
+           onerror="this.src='${fallback}';this.classList.add('is-ph')">
+    </div>`;
   }).join('');
 
-  dots.innerHTML = gItems.length>1
+  dots.innerHTML = gItems.length > 1
     ? gItems.map((_,i) => `<div class="gallery-dot${i===0?' active':''}" onclick="goTo(${i})"></div>`).join('')
     : '';
 
