@@ -24,82 +24,128 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── HEADER ─────────────────────────────── */
+    /* ── HEADER ─────────────────────────────────── */
     header {
       position: sticky; top: 0; z-index: 100;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
+      background: var(--bg); border-bottom: 1px solid var(--border);
       height: 60px; padding: 0 28px;
       display: flex; align-items: center; justify-content: space-between;
     }
     .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .logo-mark {
-      width: 30px; height: 30px; border-radius: 50%;
+      width: 28px; height: 28px; border-radius: 50%;
       background: var(--text);
       display: flex; align-items: center; justify-content: center;
-      color: #fff; font-size: 13px; font-weight: 600; letter-spacing: -0.5px;
+      color: #fff; font-size: 12px; font-weight: 600; letter-spacing: -0.5px;
       flex-shrink: 0;
     }
-    .logo-name { font-size: 17px; font-weight: 600; color: var(--text); letter-spacing: -0.3px; }
-    .header-meta { font-size: 10.5px; color: var(--text-sec); letter-spacing: 0.6px; text-transform: uppercase; }
+    .logo-name {
+      font-size: 16px; font-weight: 600; color: var(--text); letter-spacing: -0.3px;
+    }
+    .header-right {
+      display: flex; align-items: center; gap: 20px;
+    }
+    .header-meta {
+      font-size: 10px; color: var(--text-sec); letter-spacing: 1.2px; text-transform: uppercase;
+    }
 
-    /* ── BEST SELLERS ───────────────────────── */
-    .bs-section { padding: 60px 28px 76px; }
+    /* ── BANNER ─────────────────────────────────── */
+    .banner {
+      background: #2B2B2B;
+      padding: 48px 28px 52px;
+      position: relative; overflow: hidden;
+    }
+    .banner::after {
+      content: 'M';
+      position: absolute; right: 24px; bottom: -18px;
+      font-size: 13rem; font-weight: 700; letter-spacing: -6px; line-height: 1;
+      color: rgba(255,255,255,0.05);
+      pointer-events: none; user-select: none;
+    }
+    .banner-eyebrow {
+      font-size: 10px; font-weight: 500; letter-spacing: 2.5px;
+      text-transform: uppercase; color: rgba(255,255,255,0.38);
+      margin-bottom: 14px; display: block;
+    }
+    .banner-title {
+      font-size: 1.9rem; font-weight: 600; letter-spacing: -0.5px; line-height: 1.2;
+      color: #fff; max-width: 480px;
+    }
+    .banner-title em { font-weight: 400; font-style: italic; }
+
+    /* ── BEST SELLERS ───────────────────────────── */
+    .bs-section { padding: 64px 28px 88px; }
+
+    .bs-heading {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 56px; gap: 20px;
+    }
+    .bs-heading-left {}
     .sec-eyebrow {
-      font-size: 10.5px; font-weight: 500; letter-spacing: 2.2px;
-      text-transform: uppercase; color: var(--text-sec); margin-bottom: 6px;
+      font-size: 10px; font-weight: 500; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--text-sec); margin-bottom: 8px;
     }
     .sec-title {
-      font-size: 2rem; font-weight: 600; letter-spacing: -0.5px;
-      line-height: 1.1; margin-bottom: 52px;
+      font-size: 2.6rem; font-weight: 600; letter-spacing: -1px; line-height: 1;
+      color: var(--text);
     }
-    .bs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+    .sec-title em { font-weight: 400; font-style: italic; }
+    .bs-heading-note {
+      font-size: 0.78rem; color: var(--text-sec); line-height: 1.5;
+      max-width: 200px; text-align: right; padding-bottom: 4px;
+      font-style: italic;
+    }
 
-    .bs-card { cursor: pointer; }
+    .bs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+
+    /* BS card */
+    .bs-card { cursor: pointer; display: flex; flex-direction: column; }
+    .bs-card:hover .bs-swatch { transform: translateY(-7px) scale(1.03); }
 
     .bs-visual {
-      position: relative; aspect-ratio: 1;
+      position: relative; aspect-ratio: 3 / 4;
       display: flex; align-items: center; justify-content: center;
-      margin-bottom: 14px;
+      margin-bottom: 16px; overflow: hidden;
+      background: var(--card-bg); border-radius: 10px;
     }
-    .bs-blob {
-      position: absolute; inset: 8px;
-      transition: transform 0.45s cubic-bezier(0.34, 1.4, 0.64, 1);
+
+    .bs-ref-ghost {
+      position: absolute; z-index: 1;
+      bottom: 12px; right: 14px;
+      font-size: 5.5rem; font-weight: 700; letter-spacing: -5px; line-height: 1;
+      color: rgba(56,56,56,0.07);
+      pointer-events: none; user-select: none;
     }
-    .bs-card:nth-child(1) .bs-blob { border-radius: 62% 38% 52% 48% / 48% 52% 42% 58%; transform: rotate(-7deg); }
-    .bs-card:nth-child(1):hover .bs-blob { transform: rotate(-7deg) scale(1.04); }
-    .bs-card:nth-child(2) .bs-blob { border-radius: 44% 56% 38% 62% / 60% 40% 56% 44%; transform: rotate(5deg); }
-    .bs-card:nth-child(2):hover .bs-blob { transform: rotate(5deg) scale(1.04); }
-    .bs-card:nth-child(3) .bs-blob { border-radius: 58% 42% 62% 38% / 38% 62% 44% 56%; transform: rotate(-4deg); }
-    .bs-card:nth-child(3):hover .bs-blob { transform: rotate(-4deg) scale(1.04); }
-    .bs-card:nth-child(4) .bs-blob { border-radius: 40% 60% 46% 54% / 56% 44% 60% 40%; transform: rotate(7deg); }
-    .bs-card:nth-child(4):hover .bs-blob { transform: rotate(7deg) scale(1.04); }
 
-    .bs-img {
-      position: relative; z-index: 2;
-      width: 32%; height: 32%; object-fit: contain;
-      filter: drop-shadow(0 4px 14px rgba(0,0,0,0.1));
-      transition: transform 0.45s cubic-bezier(0.34, 1.4, 0.64, 1);
+    .bs-swatch {
+      position: relative; z-index: 2; width: 20%; aspect-ratio: 1 / 1.5;
+      transition: transform 0.5s cubic-bezier(0.34, 1.4, 0.64, 1);
     }
-    .bs-card:hover .bs-img { transform: translateY(-6px) scale(1.03); }
+    .bs-swatch img { width: 100%; height: 100%; object-fit: contain; }
 
-    .bs-name { font-size: 0.875rem; font-weight: 500; margin-bottom: 2px; }
-    .bs-ref  { font-size: 0.72rem; color: var(--text-sec); margin-bottom: 5px; }
-    .bs-price { font-size: 0.9rem; font-weight: 600; }
+    .bs-info {}
+    .bs-subcat {
+      font-size: 9.5px; font-weight: 500; letter-spacing: 1.8px;
+      text-transform: uppercase; color: var(--text-sec); margin-bottom: 4px;
+    }
+    .bs-name {
+      font-size: 0.9rem; font-weight: 500; font-style: italic;
+      color: var(--text); margin-bottom: 6px; line-height: 1.3;
+    }
+    .bs-price { font-size: 1rem; font-weight: 600; color: var(--text); }
 
-    /* ── CATEGORY NAV ───────────────────────── */
+    /* ── CATEGORY NAV ───────────────────────────── */
     .cat-nav-wrap {
       position: sticky; top: 60px; z-index: 90;
       background: var(--bg); border-bottom: 1px solid var(--border);
     }
     .cat-nav {
-      display: flex; overflow-x: auto; scrollbar-width: none;
-      padding: 0 28px;
+      display: flex; overflow-x: auto; scrollbar-width: none; padding: 0 28px;
     }
     .cat-nav::-webkit-scrollbar { display: none; }
     .cat-tab {
       flex-shrink: 0; padding: 15px 18px;
-      font-size: 0.825rem; font-weight: 500; color: var(--text-sec);
+      font-size: 0.82rem; font-weight: 500; color: var(--text-sec);
       border-bottom: 2px solid transparent;
       cursor: pointer; white-space: nowrap;
       transition: color 0.15s, border-color 0.15s;
@@ -107,77 +153,134 @@
     .cat-tab.active { color: var(--text); border-bottom-color: var(--text); }
     .cat-tab:hover:not(.active) { color: var(--text); }
 
-    /* ── PRODUCT SECTIONS ───────────────────── */
-    .products-main { padding: 0 28px 96px; }
-    .cat-section { margin-top: 60px; }
-    .cat-section-head { margin-bottom: 30px; }
-    .cat-section-name { font-size: 1.35rem; font-weight: 600; letter-spacing: -0.3px; margin-bottom: 3px; }
-    .cat-section-count { font-size: 0.775rem; color: var(--text-sec); }
+    /* ── PRODUCT SECTIONS ───────────────────────── */
+    .products-main { padding: 0 28px 100px; }
+    .cat-section { margin-top: 72px; }
 
+    /* Section header — horizontal editorial layout */
+    .cat-section-head {
+      display: flex; align-items: baseline; gap: 18px;
+      padding-bottom: 20px; margin-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cat-section-name {
+      font-size: 1.75rem; font-weight: 600; letter-spacing: -0.5px;
+      flex-shrink: 0; line-height: 1;
+    }
+    .cat-section-name em { font-weight: 400; font-style: italic; }
+    .cat-section-rule { flex: 1; height: 1px; background: var(--border); }
+    .cat-section-count {
+      font-size: 0.72rem; color: var(--text-sec); flex-shrink: 0;
+      letter-spacing: 0.3px;
+    }
+
+    /* Subcategory divider */
     .subcat-divider {
       display: flex; align-items: center; gap: 14px;
-      margin: 30px 0 18px;
+      margin: 36px 0 18px;
     }
     .subcat-label {
-      font-size: 0.69rem; font-weight: 500; letter-spacing: 1.8px;
+      font-size: 0.68rem; font-weight: 500; letter-spacing: 2px;
       text-transform: uppercase; color: var(--text-sec); white-space: nowrap;
     }
     .subcat-rule { flex: 1; height: 1px; background: var(--border); }
 
-    /* ── PRODUCT GRID ───────────────────────── */
-    .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    /* ── PRODUCT GRID ───────────────────────────── */
+    .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 
+    /* ── PRODUCT CARD ───────────────────────────── */
     .product-card {
-      background: var(--card-bg); border-radius: 10px; overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative; cursor: pointer; overflow: hidden;
+      background: var(--card-bg); border-radius: 10px;
+      border: 1px solid transparent;
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .product-card:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,0.06); }
+    .product-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      border-color: var(--border);
+    }
 
+    /* Accent bar — color of the product, slides in on hover */
+    .product-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2.5px;
+      background: var(--pc, #383838);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 3;
+    }
+    .product-card:hover::before { transform: scaleX(1); }
+
+    /* Image area */
     .pc-img-wrap {
       aspect-ratio: 1; position: relative;
-      display: flex; align-items: center; justify-content: center;
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
     }
+
+    /* Ghost reference number in background */
+    .pc-img-wrap::after {
+      content: attr(data-ref);
+      position: absolute;
+      bottom: 6px; right: 10px;
+      font-size: 4.2rem; font-weight: 700; letter-spacing: -4px; line-height: 1;
+      color: rgba(56,56,56,0.055);
+      pointer-events: none; user-select: none;
+    }
+
     .pc-img-wrap img {
-      width: 34%; height: 34%; object-fit: contain;
-      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.07));
+      width: 18%; height: 18%; object-fit: contain; position: relative; z-index: 1;
     }
 
     .badge-agotado {
-      position: absolute; top: 9px; right: 9px;
-      background: rgba(255,255,255,0.88); color: var(--text-sec);
-      font-size: 9.5px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase;
-      padding: 3px 8px; border-radius: 4px; backdrop-filter: blur(4px);
+      position: absolute; top: 9px; right: 9px; z-index: 2;
+      background: rgba(255,255,255,0.9); color: var(--text-sec);
+      font-size: 9px; font-weight: 500; letter-spacing: 0.6px; text-transform: uppercase;
+      padding: 3px 7px; border-radius: 3px; backdrop-filter: blur(4px);
     }
     .badge-media {
-      position: absolute; bottom: 9px; right: 9px;
-      background: rgba(56,56,56,0.7); color: #fff;
-      font-size: 9.5px; padding: 3px 7px; border-radius: 4px;
+      position: absolute; bottom: 9px; right: 9px; z-index: 2;
+      background: rgba(56,56,56,0.68); color: #fff;
+      font-size: 9px; padding: 3px 6px; border-radius: 3px;
       display: flex; align-items: center; gap: 3px;
     }
 
-    .pc-info { padding: 11px 13px 14px; }
-    .pc-name { font-size: 0.82rem; font-weight: 500; line-height: 1.35; margin-bottom: 2px; }
-    .pc-ref  { font-size: 0.7rem; color: var(--text-sec); margin-bottom: 7px; }
-    .pc-price { font-size: 0.875rem; font-weight: 600; }
-    .pc-price.sold-out { color: var(--text-sec); text-decoration: line-through; }
-
-    /* ── FOOTER ─────────────────────────────── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 28px 28px;
+    /* Card info */
+    .pc-info { padding: 10px 12px 14px; }
+    .pc-subcat {
+      font-size: 9px; font-weight: 500; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--text-sec); margin-bottom: 3px;
+    }
+    .pc-name {
+      font-size: 0.82rem; font-weight: 500; font-style: italic;
+      color: var(--text); line-height: 1.35; margin-bottom: 8px;
+    }
+    .pc-bottom {
       display: flex; align-items: center; justify-content: space-between;
     }
-    .footer-brand   { font-size: 0.78rem; color: var(--text-sec); }
-    .footer-version { font-size: 0.78rem; color: var(--text-sec); }
+    .pc-price { font-size: 0.875rem; font-weight: 600; color: var(--text); }
+    .pc-price.sold-out { color: var(--text-sec); text-decoration: line-through; }
+    .pc-ref-small { font-size: 0.68rem; color: var(--text-sec); }
 
-    /* ── MODAL ──────────────────────────────── */
+    /* Sold-out card — slightly dimmed */
+    .product-card.is-agotado { opacity: 0.65; }
+
+    /* ── FOOTER ─────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border); padding: 28px 28px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-brand   { font-size: 0.75rem; color: var(--text-sec); }
+    .footer-version {
+      font-size: 0.75rem; color: var(--text-sec); font-style: italic;
+    }
+
+    /* ── MODAL ──────────────────────────────────── */
     .modal-overlay {
       position: fixed; inset: 0; z-index: 1000;
       background: rgba(0,0,0,0.46);
       display: flex; align-items: flex-end; justify-content: center;
-      opacity: 0; pointer-events: none;
-      transition: opacity 0.25s ease;
+      opacity: 0; pointer-events: none; transition: opacity 0.25s ease;
     }
     .modal-overlay.open { opacity: 1; pointer-events: all; }
 
@@ -190,10 +293,16 @@
     }
     .modal-overlay.open .modal { transform: translateY(0); }
 
+    /* Modal top accent bar (product color) */
+    .modal-accent {
+      height: 3px; background: var(--modal-pc, var(--text));
+      border-radius: 18px 18px 0 0;
+    }
+
     .modal-close-btn {
-      position: absolute; top: 13px; right: 13px; z-index: 10;
+      position: absolute; top: 15px; right: 14px; z-index: 10;
       width: 30px; height: 30px; border-radius: 50%;
-      background: rgba(255,255,255,0.9); border: none; cursor: pointer;
+      background: rgba(247,247,247,0.92); border: none; cursor: pointer;
       font-size: 20px; line-height: 1;
       display: flex; align-items: center; justify-content: center;
       color: var(--text); backdrop-filter: blur(6px);
@@ -201,17 +310,13 @@
 
     /* Gallery */
     .gallery { position: relative; background: var(--card-bg); overflow: hidden; user-select: none; }
-    .gallery-track {
-      display: flex;
-      transition: transform 0.36s cubic-bezier(0.32, 0.72, 0, 1);
-    }
+    .gallery-track { display: flex; transition: transform 0.36s cubic-bezier(0.32, 0.72, 0, 1); }
     .gallery-item {
       min-width: 100%; aspect-ratio: 1;
       display: flex; align-items: center; justify-content: center; overflow: hidden;
     }
     .gallery-item img {
-      width: 38%; height: 38%; object-fit: contain;
-      filter: drop-shadow(0 4px 14px rgba(0,0,0,0.09));
+      width: 20%; height: 20%; object-fit: contain;
     }
     .gallery-item.is-video { background: #181818; }
 
@@ -221,12 +326,12 @@
     }
     .video-ph-btn {
       width: 54px; height: 54px; border-radius: 50%;
-      background: rgba(255,255,255,0.12); border: 2px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.3);
       display: flex; align-items: center; justify-content: center;
       font-size: 20px; margin-bottom: 4px;
     }
-    .video-ph-label  { font-size: 0.82rem; font-weight: 500; }
-    .video-ph-path   { font-size: 0.62rem; opacity: 0.38; font-family: monospace; margin-top: 2px; }
+    .video-ph-label { font-size: 0.82rem; font-weight: 500; }
+    .video-ph-path  { font-size: 0.62rem; opacity: 0.35; font-family: monospace; margin-top: 2px; }
 
     .gallery-dots {
       position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
@@ -234,8 +339,7 @@
     }
     .gallery-dot {
       width: 5.5px; height: 5.5px; border-radius: 50%;
-      background: rgba(56,56,56,0.2); cursor: pointer;
-      transition: background 0.18s;
+      background: rgba(56,56,56,0.2); cursor: pointer; transition: background 0.18s;
     }
     .gallery-dot.active { background: var(--text); }
 
@@ -254,27 +358,43 @@
 
     .gal-type-tag {
       position: absolute; top: 12px; left: 12px;
-      background: rgba(56,56,56,0.66); color: #fff;
+      background: rgba(56,56,56,0.64); color: #fff;
       font-size: 9.5px; font-weight: 500; letter-spacing: 0.8px; text-transform: uppercase;
-      padding: 4px 8px; border-radius: 4px; backdrop-filter: blur(4px);
+      padding: 4px 8px; border-radius: 3px; backdrop-filter: blur(4px);
     }
     .gal-type-tag.hidden { display: none; }
 
     /* Modal product info */
-    .modal-info { padding: 22px 22px 30px; }
-    .modal-cat   { font-size: 10.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-sec); margin-bottom: 5px; }
-    .modal-name  { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.3px; margin-bottom: 3px; }
-    .modal-ref   { font-size: 0.78rem; color: var(--text-sec); margin-bottom: 14px; }
-    .modal-price { font-size: 1.35rem; font-weight: 600; margin-bottom: 14px; }
-    .modal-desc  { font-size: 0.85rem; color: var(--text-sec); line-height: 1.65; margin-bottom: 16px; }
+    .modal-info { padding: 24px 22px 32px; }
+
+    .modal-info-top {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      margin-bottom: 4px;
+    }
+    .modal-cat {
+      font-size: 9.5px; letter-spacing: 1.8px; text-transform: uppercase;
+      color: var(--text-sec);
+    }
+    .modal-ref-tag {
+      font-size: 0.72rem; color: var(--text-sec); font-family: monospace;
+    }
+    .modal-name {
+      font-size: 1.3rem; font-weight: 600; letter-spacing: -0.3px; font-style: italic;
+      margin-bottom: 16px; line-height: 1.2;
+    }
+    .modal-price-row {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+    }
+    .modal-price { font-size: 1.4rem; font-weight: 600; }
+    .modal-desc { font-size: 0.845rem; color: var(--text-sec); line-height: 1.7; margin-bottom: 16px; }
     .modal-badge-sold {
       display: inline-block;
       background: var(--card-bg); border: 1px solid var(--border);
-      color: var(--text-sec); font-size: 0.78rem; font-weight: 500;
-      padding: 6px 14px; border-radius: 6px;
+      color: var(--text-sec); font-size: 0.75rem; font-weight: 500;
+      padding: 5px 12px; border-radius: 4px;
     }
 
-    /* ── RESPONSIVE ─────────────────────────── */
+    /* ── RESPONSIVE ─────────────────────────────── */
     @media (max-width: 960px) {
       .bs-grid      { grid-template-columns: repeat(2, 1fr); }
       .product-grid { grid-template-columns: repeat(2, 1fr); }
@@ -282,50 +402,67 @@
     @media (max-width: 580px) {
       header, .products-main, .bs-section, footer { padding-left: 16px; padding-right: 16px; }
       .cat-nav { padding: 0 16px; }
-      .sec-title { font-size: 1.65rem; }
+      .sec-title { font-size: 2rem; }
+      .cat-section-name { font-size: 1.4rem; }
+      .bs-heading { flex-direction: column; gap: 12px; }
+      .bs-heading-note { text-align: left; }
     }
     @media (min-width: 769px) {
       .modal-overlay { align-items: center; }
-      .modal { border-radius: 16px; max-height: 82vh; transform: translateY(16px) scale(0.97); }
+      .modal { border-radius: 16px; max-height: 82vh; transform: translateY(14px) scale(0.97); }
       .modal-overlay.open .modal { transform: translateY(0) scale(1); }
     }
   </style>
 </head>
 <body>
 
-<!-- ── HEADER ──────────────────────────────── -->
+<!-- ── HEADER ─────────────────────────────────── -->
 <header>
   <a class="logo" href="#">
     <div class="logo-mark">M</div>
     <span class="logo-name">Maragel</span>
   </a>
-  <span class="header-meta">Colombia · Desde 2017</span>
+  <div class="header-right">
+    <span class="header-meta">Colombia · Desde 2017</span>
+  </div>
 </header>
 
-<!-- ── BEST SELLERS ────────────────────────── -->
+<!-- ── BANNER ─────────────────────────────────── -->
+<div class="banner">
+  <span class="banner-eyebrow">Colombia · Desde 2017</span>
+  <h2 class="banner-title">Color y calidad<br><em>que evolucionan.</em></h2>
+</div>
+
+<!-- ── BEST SELLERS ───────────────────────────── -->
 <section class="bs-section">
-  <div class="sec-eyebrow">Lo más amado</div>
-  <div class="sec-title">Best Sellers</div>
+  <div class="bs-heading">
+    <div class="bs-heading-left">
+      <div class="sec-eyebrow">Lo más amado</div>
+      <div class="sec-title">Best <em>Sellers</em></div>
+    </div>
+    <div class="bs-heading-note">Los tonos favoritos<br>de la temporada</div>
+  </div>
   <div class="bs-grid" id="bs-grid"></div>
 </section>
 
-<!-- ── CATEGORY NAV ────────────────────────── -->
+<!-- ── CATEGORY NAV ───────────────────────────── -->
 <div class="cat-nav-wrap">
   <nav class="cat-nav" id="cat-nav"></nav>
 </div>
 
-<!-- ── PRODUCT GRID ─────────────────────────── -->
+<!-- ── PRODUCT GRID ────────────────────────────── -->
 <main class="products-main" id="products-main"></main>
 
-<!-- ── FOOTER ──────────────────────────────── -->
+<!-- ── FOOTER ─────────────────────────────────── -->
 <footer>
   <span class="footer-brand">Maragel — Esmaltes Semipermanentes</span>
   <span class="footer-version">Catálogo digital · 2026</span>
 </footer>
 
-<!-- ── MODAL ───────────────────────────────── -->
+<!-- ── MODAL ──────────────────────────────────── -->
 <div class="modal-overlay" id="modal-overlay">
   <div class="modal" id="modal">
+    <div class="modal-accent" id="modal-accent"></div>
     <button class="modal-close-btn" id="modal-close">×</button>
     <div class="gallery" id="gallery">
       <div class="gallery-track" id="gal-track"></div>
@@ -339,11 +476,10 @@
 </div>
 
 <script>
-/* ──────────────────────────────────────────────────────────
-   PRODUCTOS
-   En producción: sustituir por fetch('productos.json')
-   y envolver el init en .then(data => { PRODUCTOS = data; init(); })
-────────────────────────────────────────────────────────── */
+/* ──────────────────────────────────────────────────────────────
+   PRODUCTOS — demo embebido.
+   En producción: fetch('productos.json').then(r=>r.json()).then(init)
+──────────────────────────────────────────────────────────────── */
 const PRODUCTOS = [
   {
     id:'m0001', nombre:'Esmalte Semipermanente 322', referencia:'322',
@@ -468,56 +604,50 @@ const PRODUCTOS = [
   }
 ];
 
-/* ──────────────────────────────────────────────────────────
-   COLORES DEMO (para placeholders SVG — reemplazar con
-   imágenes reales en img/maragel/)
-────────────────────────────────────────────────────────── */
+/* ── COLORES DEMO ───────────────────────────── */
 const COLORES_DEMO = {
-  '322':      '#C8102E',  // Rojo
-  '219':      '#9B59B6',  // Lila
-  '044':      '#7B9EDE',  // Aurora azul-lila
-  '001':      '#E8C9A0',  // Nude
-  '087':      '#F472B6',  // Rosa
-  '154':      '#27AE60',  // Verde
-  '033':      '#BAFF3B',  // Neón
-  '712':      '#6B21A8',  // Cat Eye violeta
-  '601':      '#D4AF37',  // Golden
-  'TC-01':    '#D8D8D8',  // Top Coat transparente
-  'BR-01':    '#FFDDD6',  // Base rubber rosa
-  'LAMP-48':  '#4A4A6A',  // Lámpara
-  'ALC-01':   '#B0B8C4',  // Alicate
-  'LIMA-V':   '#A8D4E8',  // Lima vidrio
-  'PO-ALM-01':'#FFF0F0',  // Press On
-  'SG-STL':   '#EEF0FF',  // Soft Gel
-  'APL-FL3D': '#FFB6C1',  // Apliques
-  'STK-MAR':  '#B0D4FF',  // Stickers
+  '322':      '#C8102E',
+  '219':      '#9B59B6',
+  '044':      '#7B9EDE',
+  '001':      '#E8C9A0',
+  '087':      '#F472B6',
+  '154':      '#27AE60',
+  '033':      '#BAFF3B',
+  '712':      '#6B21A8',
+  '601':      '#D4AF37',
+  'TC-01':    '#C8C8C8',
+  'BR-01':    '#FFDDD6',
+  'LAMP-48':  '#4A4A6A',
+  'ALC-01':   '#B0B8C4',
+  'LIMA-V':   '#A8D4E8',
+  'PO-ALM-01':'#F5E6E6',
+  'SG-STL':   '#DCDCF5',
+  'APL-FL3D': '#FFB6C1',
+  'STK-MAR':  '#B0D4FF',
 };
 
-/* ── UTILIDADES ────────────────────────────────── */
-function hex2rgb(hex) {
-  return [parseInt(hex.slice(1,3),16), parseInt(hex.slice(3,5),16), parseInt(hex.slice(5,7),16)];
-}
-function lighten(hex, a = 0.28) {
-  const [r,g,b] = hex2rgb(hex);
-  const l = v => Math.round(v+(255-v)*a).toString(16).padStart(2,'0');
-  return `#${l(r)}${l(g)}${l(b)}`;
-}
+/* ── UTILS ──────────────────────────────────── */
 function fmtPrice(p) {
   if (p === 'pendiente') return 'Consultar precio';
   return '$' + Number(p).toLocaleString('es-CO');
 }
 function getColor(p) { return COLORES_DEMO[p.referencia] || '#CCCCCC'; }
 
-/* ── SVG PLACEHOLDERS DEMO ────────────────────── */
-function bottleSVG(hex) {
+/* ── PLACEHOLDER SVG (gris neutro mientras no haya foto) ── */
+function swatchSVG() {
   const s = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 44">
-  <rect x="1" y="1" width="26" height="42" rx="13" fill="${hex}"/>
+  <rect x="1" y="1" width="26" height="42" rx="13" fill="#C8C8C8"/>
 </svg>`;
   return 'data:image/svg+xml,' + encodeURIComponent(s);
 }
 
 function nailRowSVG(hex) {
-  const lhex = lighten(hex, 0.15);
+  function lighten(h, a=0.18) {
+    const r=parseInt(h.slice(1,3),16), g=parseInt(h.slice(3,5),16), b=parseInt(h.slice(5,7),16);
+    const l=v=>Math.round(v+(255-v)*a).toString(16).padStart(2,'0');
+    return `#${l(r)}${l(g)}${l(b)}`;
+  }
+  const lhex = lighten(hex);
   const fingers = [0,1,2,3,4].map(i => {
     const x = 8 + i*39;
     const uid = 'ng'+i+Math.random().toString(36).slice(2,5);
@@ -529,36 +659,39 @@ function nailRowSVG(hex) {
   <rect x="2" y="30" width="27" height="60" rx="13" fill="#F5D0B5"/>
   <rect x="2" y="11" width="27" height="44" rx="13" fill="url(#${uid})"/>
   <rect x="2" y="40" width="27" height="15" fill="#F5D0B5"/>
-  <rect x="8" y="16" width="7" height="22" rx="3.5" fill="rgba(255,255,255,0.26)"/>
+  <rect x="8" y="16" width="7" height="22" rx="3.5" fill="rgba(255,255,255,0.24)"/>
 </g>`;
   }).join('');
-  const s = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 120">${fingers}</svg>`;
-  return 'data:image/svg+xml,' + encodeURIComponent(s);
+  return 'data:image/svg+xml,' + encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 120">${fingers}</svg>`
+  );
 }
 
-function getImgSrc(p, type='bottle') {
+function getImgSrc(p, type='swatch') {
   const c = getColor(p);
-  return type === 'nail' ? nailRowSVG(c) : bottleSVG(c);
+  return type === 'nail' ? nailRowSVG(c) : swatchSVG();
 }
 
-/* ── RENDER BEST SELLERS ─────────────────────── */
+/* ── RENDER BEST SELLERS ────────────────────── */
 function renderBS() {
   const items = PRODUCTOS.filter(p => p.best_seller);
   document.getElementById('bs-grid').innerHTML = items.map(p => `
     <div class="bs-card" onclick="openModal('${p.id}')">
       <div class="bs-visual">
-        <div class="bs-blob" style="background:${p.color_blob}"></div>
-        <img class="bs-img" src="${getImgSrc(p)}" alt="${p.nombre}">
+        <div class="bs-ref-ghost">${p.referencia}</div>
+        <div class="bs-swatch">
+          <img src="${getImgSrc(p)}" alt="${p.nombre}">
+        </div>
       </div>
-      <div>
+      <div class="bs-info">
+        <div class="bs-subcat">${p.subcategoria}</div>
         <div class="bs-name">${p.nombre}</div>
-        <div class="bs-ref">Ref. ${p.referencia}</div>
         <div class="bs-price">${fmtPrice(p.precio)}</div>
       </div>
     </div>`).join('');
 }
 
-/* ── RENDER CATEGORY NAV ─────────────────────── */
+/* ── RENDER CATEGORY NAV ────────────────────── */
 function renderCatNav() {
   const cats = ['Todos', ...new Set(PRODUCTOS.map(p => p.categoria))];
   document.getElementById('cat-nav').innerHTML = cats.map(c => `
@@ -573,26 +706,38 @@ function filterCat(cat) {
     .forEach(s => { s.style.display = (cat==='Todos' || s.dataset.cat===cat) ? '' : 'none'; });
 }
 
-/* ── RENDER PRODUCT CARD ─────────────────────── */
+/* ── RENDER PRODUCT CARD ────────────────────── */
 function productCard(p) {
+  const c = getColor(p);
   const hasMedia = p.galeria && p.galeria.length > 1;
   const hasVideo = hasMedia && p.galeria.some(g => g.tipo==='video');
   return `
-  <div class="product-card" onclick="openModal('${p.id}')">
-    <div class="pc-img-wrap">
+  <div class="product-card${p.agotado?' is-agotado':''}" style="--pc:${c}" onclick="openModal('${p.id}')">
+    <div class="pc-img-wrap" data-ref="${p.referencia}">
       <img src="${getImgSrc(p)}" alt="${p.nombre}">
       ${p.agotado ? '<div class="badge-agotado">Agotado</div>' : ''}
       ${hasMedia ? `<div class="badge-media">${hasVideo?'▶':'⊞'} ${p.galeria.length}</div>` : ''}
     </div>
     <div class="pc-info">
+      <div class="pc-subcat">${p.subcategoria}</div>
       <div class="pc-name">${p.nombre}</div>
-      <div class="pc-ref">Ref. ${p.referencia}</div>
-      <div class="pc-price${p.agotado?' sold-out':''}">${fmtPrice(p.precio)}</div>
+      <div class="pc-bottom">
+        <div class="pc-price${p.agotado?' sold-out':''}">${fmtPrice(p.precio)}</div>
+        <div class="pc-ref-small">${p.referencia}</div>
+      </div>
     </div>
   </div>`;
 }
 
-/* ── RENDER PRODUCT SECTIONS ─────────────────── */
+/* ── RENDER PRODUCT SECTIONS ────────────────── */
+/* Marca visualmente el nombre de la categoría:
+   primera palabra normal + resto en itálica */
+function styledCatName(cat) {
+  const parts = cat.split(' ');
+  if (parts.length <= 1) return cat;
+  return `${parts[0]} <em>${parts.slice(1).join(' ')}</em>`;
+}
+
 function renderProducts() {
   const cats = [...new Set(PRODUCTOS.map(p => p.categoria))];
   document.getElementById('products-main').innerHTML = cats.map(cat => {
@@ -614,7 +759,8 @@ function renderProducts() {
     return `
     <section class="cat-section" data-cat="${cat}">
       <div class="cat-section-head">
-        <div class="cat-section-name">${cat}</div>
+        <div class="cat-section-name">${styledCatName(cat)}</div>
+        <div class="cat-section-rule"></div>
         <div class="cat-section-count">${cProds.length} ${cProds.length===1?'producto':'productos'}</div>
       </div>
       ${inner}
@@ -622,7 +768,7 @@ function renderProducts() {
   }).join('');
 }
 
-/* ── MODAL & GALLERY ─────────────────────────── */
+/* ── MODAL & GALLERY ────────────────────────── */
 let gi=0, gItems=[], gProd=null;
 
 function openModal(id) {
@@ -632,6 +778,10 @@ function openModal(id) {
     ? gProd.galeria
     : [{tipo:'foto', src:gProd.imagen}];
   gi = 0;
+
+  // Set modal accent color
+  document.getElementById('modal-accent').style.background = getColor(gProd);
+
   buildGallery();
   buildModalInfo();
   document.getElementById('modal-overlay').classList.add('open');
@@ -656,7 +806,7 @@ function buildGallery() {
           <div class="video-ph-path">${item.src}</div>
         </div>
       </div>`;
-    const imgSrc = idx===1 ? getImgSrc(gProd,'nail') : getImgSrc(gProd,'bottle');
+    const imgSrc = idx===1 ? getImgSrc(gProd,'nail') : getImgSrc(gProd,'swatch');
     return `<div class="gallery-item"><img src="${imgSrc}" alt="Foto ${idx+1}"></div>`;
   }).join('');
 
@@ -686,17 +836,21 @@ function goTo(i) { gi=i; updateGallery(); }
 
 function buildModalInfo() {
   const p = gProd;
-  const subLabel = p.subcategoria && p.subcategoria!==p.categoria ? ' · '+p.subcategoria : '';
+  const subLabel = p.subcategoria && p.subcategoria!==p.categoria ? p.subcategoria : p.categoria;
   document.getElementById('modal-info').innerHTML = `
-    <div class="modal-cat">${p.categoria}${subLabel}</div>
+    <div class="modal-info-top">
+      <div class="modal-cat">${subLabel}</div>
+      <div class="modal-ref-tag">${p.referencia}</div>
+    </div>
     <div class="modal-name">${p.nombre}</div>
-    <div class="modal-ref">Referencia ${p.referencia}</div>
-    <div class="modal-price">${fmtPrice(p.precio)}</div>
+    <div class="modal-price-row">
+      <div class="modal-price">${fmtPrice(p.precio)}</div>
+    </div>
     ${p.descripcion ? `<div class="modal-desc">${p.descripcion}</div>` : ''}
     ${p.agotado ? '<div class="modal-badge-sold">Agotado temporalmente</div>' : ''}`;
 }
 
-/* ── SWIPE GALLERY (móvil) ─────────────────── */
+/* ── SWIPE (móvil) ──────────────────────────── */
 let swipeX = 0;
 const gEl = document.getElementById('gallery');
 gEl.addEventListener('touchstart', e => { swipeX = e.touches[0].clientX; }, {passive:true});
