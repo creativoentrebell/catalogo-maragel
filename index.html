@@ -740,7 +740,7 @@ function renderBS() {
       <div class="bs-info">
         <div class="bs-subcat">${p.subcategoria}</div>
         <div class="bs-name">${p.nombre}</div>
-        <div class="bs-price">${fmtPrice(p.precio)}</div>
+        <div class="bs-price" data-ref="${p.referencia}" data-detal="${fmtPrice(p.precio)}">${fmtPrice(p.precio)}</div>
       </div>
     </div>`;
   }).join('');
@@ -781,8 +781,8 @@ function setMode(mode) {
   document.getElementById('btn-detal').classList.toggle('active', mode === 'detal');
   document.getElementById('btn-mayorista').classList.toggle('active', mode === 'mayorista');
   document.getElementById('modo-banner').classList.toggle('visible', mode === 'mayorista');
-  // Actualizar precios en las tarjetas consultando PRECIOS_MAY directamente
-  document.querySelectorAll('.pc-price[data-ref]').forEach(el => {
+  // Actualizar precios en tarjetas y best sellers consultando PRECIOS_MAY directamente
+  document.querySelectorAll('.pc-price[data-ref], .bs-price[data-ref]').forEach(el => {
     if (mode === 'detal') {
       el.textContent = el.dataset.detal;
     } else {
