@@ -535,8 +535,8 @@
     "imagen": "img/color/54-5.png",
     "agotado": false,
     "nuevo": false,
-    "best_seller": true,
-    "color_blob": "#E0DFF0",
+    "best_seller": false,
+    "color_blob": "",
     "galeria": [
       {
         "tipo": "foto",
@@ -876,8 +876,8 @@
     "imagen": "img/color/B180.jpg",
     "agotado": false,
     "nuevo": false,
-    "best_seller": true,
-    "color_blob": "#FAE5C0",
+    "best_seller": false,
+    "color_blob": "",
     "galeria": [
       {
         "tipo": "foto",
@@ -1601,8 +1601,8 @@
     "imagen": "img/color/B124.jpg",
     "agotado": false,
     "nuevo": false,
-    "best_seller": true,
-    "color_blob": "#C8D4F0",
+    "best_seller": false,
+    "color_blob": "",
     "galeria": [
       {
         "tipo": "foto",
@@ -2227,8 +2227,8 @@
     "imagen": "img/color/B284.jpg",
     "agotado": false,
     "nuevo": false,
-    "best_seller": true,
-    "color_blob": "#D4F0C8",
+    "best_seller": false,
+    "color_blob": "",
     "galeria": [
       {
         "tipo": "foto",
@@ -3958,7 +3958,17 @@
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
-    "color_blob": ""
+    "color_blob": "",
+    "galeria": [
+      {
+        "tipo": "foto",
+        "src": "img/color/B352.jpg"
+      },
+      {
+        "tipo": "video",
+        "src": "img/video/Ref 352.mp4"
+      }
+    ]
   },
   {
     "id": "pc821",
@@ -4053,7 +4063,7 @@
     "categoria": "Uñas Soft Gel",
     "subcategoria": "Soft Gel por Forma",
     "descripcion": "550 piezas en 10 tamaños. Tecnología japonesa.",
-    "imagen": "img/maragel/PRESQ-S.jpg",
+    "imagen": "img/color/PRESQ-S.png",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -4068,7 +4078,7 @@
     "categoria": "Uñas Soft Gel",
     "subcategoria": "Soft Gel por Forma",
     "descripcion": "550 piezas en 10 tamaños. Tecnología japonesa.",
-    "imagen": "img/maragel/PRESQ-M.jpg",
+    "imagen": "img/color/PRESQ-M.png",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -4083,7 +4093,7 @@
     "categoria": "Uñas Soft Gel",
     "subcategoria": "Soft Gel por Forma",
     "descripcion": "550 piezas en 10 tamaños. Tecnología japonesa.",
-    "imagen": "img/maragel/PREOV-M.jpg",
+    "imagen": "img/color/PREOV-M.png",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
