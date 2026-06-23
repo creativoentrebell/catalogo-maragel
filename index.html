@@ -358,6 +358,11 @@
     }
     .pc-img-wrap img.is-ph { width: 18%; height: 18%; }
 
+    /* Esmaltes en Gel: foto rellena todo el recuadro */
+    .product-card[data-cat="Esmaltes en Gel"] .pc-img-wrap img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+
     /* Zoom para Soft Gel Individual — recorta el halo y ruido de esquinas */
     .product-card[data-subcat="Soft Gel Individual"] .pc-img-wrap img {
       width: 100%; height: 100%; object-fit: cover; transform: scale(1.15);
@@ -776,9 +781,14 @@ function setMode(mode) {
   document.getElementById('btn-detal').classList.toggle('active', mode === 'detal');
   document.getElementById('btn-mayorista').classList.toggle('active', mode === 'mayorista');
   document.getElementById('modo-banner').classList.toggle('visible', mode === 'mayorista');
-  // Actualizar todos los precios visibles en el DOM
-  document.querySelectorAll('[data-detal]').forEach(el => {
-    el.textContent = mode === 'detal' ? el.dataset.detal : el.dataset.mayorista;
+  // Actualizar precios en las tarjetas consultando PRECIOS_MAY directamente
+  document.querySelectorAll('.pc-price[data-ref]').forEach(el => {
+    if (mode === 'detal') {
+      el.textContent = el.dataset.detal;
+    } else {
+      const may = PRECIOS_MAY[el.dataset.ref];
+      el.textContent = (!may || may === 'pendiente') ? 'Consultar' : fmtPrice(may);
+    }
   });
   // Actualizar modal si está abierto
   if (gProd) buildModalInfo();
@@ -860,10 +870,10 @@ function productCard(p) {
   const hasMedia = p.galeria && p.galeria.length > 1;
   const hasVideo = hasMedia && p.galeria.some(g => g.tipo==='video');
   const pDetal    = fmtPrice(p.precio);
-  const pMay      = (()=>{ const m=PRECIOS_MAY[p.referencia]; return (!m||m==='pendiente')?'Consultar':fmtPrice(m); })();
   return `
   <div class="product-card${p.agotado?' is-agotado':''}"
        style="--pc:${c}"
+       data-cat="${p.categoria}"
        data-subcat="${p.subcategoria}"
        data-agotado="${!!p.agotado}"
        data-nuevo="${!!p.nuevo}"
@@ -880,8 +890,8 @@ function productCard(p) {
       <div class="pc-name">${p.nombre}</div>
       <div class="pc-bottom">
         <div class="pc-price${p.agotado?' sold-out':''}"
-             data-detal="${pDetal}"
-             data-mayorista="${pMay}">
+             data-ref="${p.referencia}"
+             data-detal="${pDetal}">
           ${getDisplayPrice(p)}
         </div>
         <div class="pc-ref-small">${p.referencia}</div>
