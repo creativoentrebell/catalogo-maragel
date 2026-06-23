@@ -8,7 +8,7 @@
     "categoria": "Uñas Soft Gel",
     "subcategoria": "Soft Gel Individual",
     "descripcion": "",
-    "imagen": "img/maragel/UCOFM5.jpg",
+    "imagen": "img/color/UCOFM5.jpg",
     "agotado": false,
     "nuevo": true,
     "best_seller": false,
@@ -23,7 +23,7 @@
     "categoria": "Uñas Soft Gel",
     "subcategoria": "Soft Gel Individual",
     "descripcion": "",
-    "imagen": "img/maragel/UCOFM6.jpg",
+    "imagen": "img/color/UCOFM6.jpg",
     "agotado": false,
     "nuevo": true,
     "best_seller": false,
@@ -38,7 +38,7 @@
     "categoria": "Uñas Soft Gel",
     "subcategoria": "Soft Gel Individual",
     "descripcion": "",
-    "imagen": "img/maragel/UCOFM7.jpg",
+    "imagen": "img/color/UCOFM7.jpg",
     "agotado": false,
     "nuevo": true,
     "best_seller": false,
@@ -53,7 +53,7 @@
     "categoria": "Uñas Soft Gel",
     "subcategoria": "Soft Gel Individual",
     "descripcion": "",
-    "imagen": "img/maragel/UCOFM8.jpg",
+    "imagen": "img/color/UCOFM8.jpg",
     "agotado": false,
     "nuevo": true,
     "best_seller": false,
@@ -68,7 +68,7 @@
     "categoria": "Uñas Soft Gel",
     "subcategoria": "Soft Gel Individual",
     "descripcion": "",
-    "imagen": "img/maragel/UCOFM9.jpg",
+    "imagen": "img/color/UCOFM9.jpg",
     "agotado": false,
     "nuevo": true,
     "best_seller": false,
@@ -83,7 +83,7 @@
     "categoria": "Uñas Soft Gel",
     "subcategoria": "Soft Gel Individual",
     "descripcion": "",
-    "imagen": "img/maragel/USTM5.jpg",
+    "imagen": "img/color/USTM5.jpg",
     "agotado": false,
     "nuevo": true,
     "best_seller": false,
@@ -98,7 +98,7 @@
     "categoria": "Uñas Soft Gel",
     "subcategoria": "Soft Gel Individual",
     "descripcion": "",
-    "imagen": "img/maragel/USTM7.jpg",
+    "imagen": "img/color/USTM7.jpg",
     "agotado": false,
     "nuevo": true,
     "best_seller": false,
@@ -113,7 +113,7 @@
     "categoria": "Uñas Soft Gel",
     "subcategoria": "Soft Gel Individual",
     "descripcion": "",
-    "imagen": "img/maragel/USTM8.jpg",
+    "imagen": "img/color/USTM8.jpg",
     "agotado": false,
     "nuevo": true,
     "best_seller": false,
@@ -128,7 +128,7 @@
     "categoria": "Uñas Soft Gel",
     "subcategoria": "Soft Gel Individual",
     "descripcion": "",
-    "imagen": "img/maragel/USTM9.jpg",
+    "imagen": "img/color/USTM9.jpg",
     "agotado": false,
     "nuevo": true,
     "best_seller": false,
@@ -143,7 +143,7 @@
     "categoria": "Herramientas",
     "subcategoria": "Lámparas UV",
     "descripcion": "Lámpara recargable de alta potencia para curar Soft Gel UV.",
-    "imagen": "img/maragel/GLAM1.jpg",
+    "imagen": "img/color/GLAM1.png",
     "agotado": false,
     "nuevo": true,
     "best_seller": false,
@@ -158,7 +158,7 @@
     "categoria": "Herramientas",
     "subcategoria": "Lámparas UV",
     "descripcion": "Lámpara recargable de potencia media para Soft Gel UV.",
-    "imagen": "img/maragel/GLAM2.jpg",
+    "imagen": "img/color/GLAM2.png",
     "agotado": false,
     "nuevo": true,
     "best_seller": false,
@@ -173,7 +173,7 @@
     "categoria": "Herramientas",
     "subcategoria": "Lámparas UV",
     "descripcion": "Lámpara recargable compacta para Soft Gel UV.",
-    "imagen": "img/maragel/GLAM3.jpg",
+    "imagen": "img/color/GLAM3.png",
     "agotado": false,
     "nuevo": true,
     "best_seller": false,
@@ -188,7 +188,7 @@
     "categoria": "Herramientas",
     "subcategoria": "Lámparas UV",
     "descripcion": "Soporte para lámpara de uñas.",
-    "imagen": "img/maragel/GLAM4.jpg",
+    "imagen": "img/color/GLAM4.jpg",
     "agotado": false,
     "nuevo": true,
     "best_seller": false,
@@ -203,7 +203,7 @@
     "categoria": "Herramientas",
     "subcategoria": "Limas",
     "descripcion": "Pack de 5 limas doble cara 180/240.",
-    "imagen": "img/maragel/LIMG16.jpg",
+    "imagen": "img/color/LIMG16.png",
     "agotado": false,
     "nuevo": true,
     "best_seller": false,
@@ -218,11 +218,21 @@
     "categoria": "Uñas Soft Gel",
     "subcategoria": "Soft Gel por Forma",
     "descripcion": "Uñas Soft Gel profesional en 10 tamaños.",
-    "imagen": "img/maragel/PRECOF-L.jpg",
+    "imagen": "img/color/PRECOF-L 1.JPG",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
-    "color_blob": ""
+    "color_blob": "",
+    "galeria": [
+      {
+        "tipo": "foto",
+        "src": "img/color/PRECOF-L 1.JPG"
+      },
+      {
+        "tipo": "foto",
+        "src": "img/color/PRECOF-L 3.JPG"
+      }
+    ]
   },
   {
     "id": "pprecofm",
@@ -233,11 +243,21 @@
     "categoria": "Uñas Soft Gel",
     "subcategoria": "Soft Gel por Forma",
     "descripcion": "Uñas Soft Gel profesional en 10 tamaños.",
-    "imagen": "img/maragel/PRECOF-M.jpg",
+    "imagen": "img/color/PRECOF-M 1.JPG",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
-    "color_blob": ""
+    "color_blob": "",
+    "galeria": [
+      {
+        "tipo": "foto",
+        "src": "img/color/PRECOF-M 1.JPG"
+      },
+      {
+        "tipo": "foto",
+        "src": "img/color/PRECOF-M 3.JPG"
+      }
+    ]
   },
   {
     "id": "pprecofs",
@@ -248,11 +268,21 @@
     "categoria": "Uñas Soft Gel",
     "subcategoria": "Soft Gel por Forma",
     "descripcion": "Uñas Soft Gel profesional en 10 tamaños.",
-    "imagen": "img/maragel/PRECOF-S.jpg",
+    "imagen": "img/color/PRECOF-S 1.JPG",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
-    "color_blob": ""
+    "color_blob": "",
+    "galeria": [
+      {
+        "tipo": "foto",
+        "src": "img/color/PRECOF-S 1.JPG"
+      },
+      {
+        "tipo": "foto",
+        "src": "img/color/PRECOF-S 3.JPG"
+      }
+    ]
   },
   {
     "id": "ppreesm",
@@ -263,11 +293,21 @@
     "categoria": "Uñas Soft Gel",
     "subcategoria": "Soft Gel por Forma",
     "descripcion": "Uñas Soft Gel profesional en 10 tamaños.",
-    "imagen": "img/maragel/PREES-M.jpg",
+    "imagen": "img/color/PREES-M 1.JPG",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
-    "color_blob": ""
+    "color_blob": "",
+    "galeria": [
+      {
+        "tipo": "foto",
+        "src": "img/color/PREES-M 1.JPG"
+      },
+      {
+        "tipo": "foto",
+        "src": "img/color/PREES-M 3.JPG"
+      }
+    ]
   },
   {
     "id": "ppregals",
@@ -278,11 +318,21 @@
     "categoria": "Uñas Soft Gel",
     "subcategoria": "Soft Gel por Forma",
     "descripcion": "Uñas Soft Gel profesional en 10 tamaños.",
-    "imagen": "img/maragel/PREGAL-S.jpg",
+    "imagen": "img/color/PREGAL-S 1.JPG",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
-    "color_blob": ""
+    "color_blob": "",
+    "galeria": [
+      {
+        "tipo": "foto",
+        "src": "img/color/PREGAL-S 1.JPG"
+      },
+      {
+        "tipo": "foto",
+        "src": "img/color/PREGAL-S 2.JPG"
+      }
+    ]
   },
   {
     "id": "paster",
@@ -293,11 +343,21 @@
     "categoria": "Herramientas",
     "subcategoria": "Cortauñas y Guillotinas",
     "descripcion": "Cortauñas curvo de acero de alta calidad. Acabado negro brillante. Dos unidades: grande y pequeño.",
-    "imagen": "img/maragel/ASTER.jpg",
+    "imagen": "img/color/ASTER grande.png",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
-    "color_blob": ""
+    "color_blob": "",
+    "galeria": [
+      {
+        "tipo": "foto",
+        "src": "img/color/ASTER grande.png"
+      },
+      {
+        "tipo": "foto",
+        "src": "img/color/ASTET.png"
+      }
+    ]
   },
   {
     "id": "pcalisto",
@@ -308,7 +368,7 @@
     "categoria": "Herramientas",
     "subcategoria": "Cortauñas y Guillotinas",
     "descripcion": "Guillotina para uñas acrílicas, gel, tips y naturales. Acero de alta calidad con filo de precisión.",
-    "imagen": "img/maragel/CALISTO.jpg",
+    "imagen": "img/color/CALISTO.png",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -323,11 +383,21 @@
     "categoria": "Herramientas",
     "subcategoria": "Cortacutículas y Alicates",
     "descripcion": "Diseño en punta para todas las áreas. Mango ergonómico con resorte amortiguador. Filo de 5MM.",
-    "imagen": "img/maragel/ESPIRAL.jpg",
+    "imagen": "img/color/ESPIRAL_1.JPG",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
-    "color_blob": ""
+    "color_blob": "",
+    "galeria": [
+      {
+        "tipo": "foto",
+        "src": "img/color/ESPIRAL_1.JPG"
+      },
+      {
+        "tipo": "foto",
+        "src": "img/color/ESPIRAL_2.JPG"
+      }
+    ]
   },
   {
     "id": "pmoon",
@@ -338,7 +408,7 @@
     "categoria": "Herramientas",
     "subcategoria": "Cortacutículas y Alicates",
     "descripcion": "Diseño en punta, mango ergonómico estructura cerrada. Corte fino y preciso.",
-    "imagen": "img/maragel/MOON.jpg",
+    "imagen": "img/color/MOON 1.JPG",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -353,7 +423,7 @@
     "categoria": "Herramientas",
     "subcategoria": "Cortacutículas y Alicates",
     "descripcion": "Alicate en forma de tijera para corte de precisión en cutícula. Acero inoxidable.",
-    "imagen": "img/maragel/STAR.jpg",
+    "imagen": "img/color/STAR 1.JPG",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -367,12 +437,26 @@
     "precio_mayorista": "pendiente",
     "categoria": "Herramientas",
     "subcategoria": "Lámparas UV",
-    "descripcion": "Lámpara UV LED 9W para Press On. Sistema touch 60s y 120s. 17CM x 10CM.",
-    "imagen": "img/maragel/SG803.jpg",
+    "descripcion": "Lámpara UV LED 9W. Sistema touch 60s y 120s. 17CM x 10CM.",
+    "imagen": "img/color/SG803.png",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
-    "color_blob": ""
+    "color_blob": "",
+    "galeria": [
+      {
+        "tipo": "foto",
+        "src": "img/color/SG803.png"
+      },
+      {
+        "tipo": "foto",
+        "src": "img/color/SG803 2.png"
+      },
+      {
+        "tipo": "foto",
+        "src": "img/color/SG803 3.png"
+      }
+    ]
   },
   {
     "id": "plgel1",
@@ -382,12 +466,22 @@
     "precio_mayorista": "pendiente",
     "categoria": "Herramientas",
     "subcategoria": "Lámparas UV",
-    "descripcion": "Base metálica efecto espejo. Temporizador con botones 10, 30, 60 y 99 seg. Sensor de movimiento. Apta para pedicura.",
-    "imagen": "img/maragel/LGEL1.jpg",
+    "descripcion": "Base metálica efecto espejo. Temporizador 10/30/60/99 seg. Sensor de movimiento. Apta para pedicura.",
+    "imagen": "img/color/LGEL1_1.JPG",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
-    "color_blob": ""
+    "color_blob": "",
+    "galeria": [
+      {
+        "tipo": "foto",
+        "src": "img/color/LGEL1_1.JPG"
+      },
+      {
+        "tipo": "foto",
+        "src": "img/color/LGEL1_2.JPG"
+      }
+    ]
   },
   {
     "id": "p541",
@@ -397,7 +491,7 @@
     "precio_mayorista": "pendiente",
     "categoria": "Base y Top Coats",
     "subcategoria": "Base y Top Coats",
-    "descripcion": "Sistema de anclaje semipermanente. Adhesión del color gel a la uña natural. Secado en lámpara UV/LED.",
+    "descripcion": "Sistema de anclaje semipermanente. Adhesión del color gel a la uña natural.",
     "imagen": "img/esmalte/54-1-ECOMM.jpg",
     "agotado": false,
     "nuevo": false,
@@ -413,11 +507,21 @@
     "categoria": "Base y Top Coats",
     "subcategoria": "Base y Top Coats",
     "descripcion": "Top coat de acabado mate. Fórmula mejorada anti-amarillamiento.",
-    "imagen": "img/esmalte/54-3-ECOMM.png",
+    "imagen": "img/color/54-3.png",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
-    "color_blob": ""
+    "color_blob": "",
+    "galeria": [
+      {
+        "tipo": "foto",
+        "src": "img/color/54-3.png"
+      },
+      {
+        "tipo": "foto",
+        "src": "img/esmalte/54-3-ECOMM.png"
+      }
+    ]
   },
   {
     "id": "p545",
@@ -428,11 +532,21 @@
     "categoria": "Base y Top Coats",
     "subcategoria": "Base y Top Coats",
     "descripcion": "Colores más vivos y radiantes. Efecto cristalino. Mayor resistencia y brillo duradero.",
-    "imagen": "img/esmalte/54-5-ECOMM.png",
+    "imagen": "img/color/54-5.png",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
-    "color_blob": ""
+    "color_blob": "",
+    "galeria": [
+      {
+        "tipo": "foto",
+        "src": "img/color/54-5.png"
+      },
+      {
+        "tipo": "foto",
+        "src": "img/esmalte/54-5-ECOMM.png"
+      }
+    ]
   },
   {
     "id": "p546",
@@ -443,11 +557,21 @@
     "categoria": "Base y Top Coats",
     "subcategoria": "Base y Top Coats",
     "descripcion": "Acabado mate aterciopelado, más suave al tacto. Fórmula mejorada anti-amarillamiento.",
-    "imagen": "img/esmalte/54-6-ECOMM.jpg",
+    "imagen": "img/color/54-6.png",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
-    "color_blob": ""
+    "color_blob": "",
+    "galeria": [
+      {
+        "tipo": "foto",
+        "src": "img/color/54-6.png"
+      },
+      {
+        "tipo": "foto",
+        "src": "img/esmalte/54-6-ECOMM.jpg"
+      }
+    ]
   },
   {
     "id": "premo120ml",
@@ -458,7 +582,7 @@
     "categoria": "Base y Top Coats",
     "subcategoria": "Removedores",
     "descripcion": "Removedor multipropósito: semipermanente, acrílico, acrigel, gel. Aroma sandía y kiwi.",
-    "imagen": "img/maragel/REMO120ML.jpg",
+    "imagen": "img/color/REMO120ML.png",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -473,7 +597,7 @@
     "categoria": "Base y Top Coats",
     "subcategoria": "Removedores",
     "descripcion": "Removedor multipropósito tamaño profesional. Aroma sandía y kiwi.",
-    "imagen": "img/maragel/REMO500ML.jpg",
+    "imagen": "img/color/REMO500ML.png",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -488,7 +612,7 @@
     "categoria": "Herramientas",
     "subcategoria": "Limas",
     "descripcion": "Lima profesional grano 100/100. Pack x12 unidades. Entre 3.000 y 5.000 pasadas. Materiales alemanes.",
-    "imagen": "img/maragel/LIMG1.jpg",
+    "imagen": "img/color/LIMG1.png",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -503,7 +627,7 @@
     "categoria": "Herramientas",
     "subcategoria": "Limas",
     "descripcion": "Lima profesional grano 100/150. Pack x12 unidades. Entre 3.000 y 5.000 pasadas. Materiales alemanes.",
-    "imagen": "img/maragel/LIMG2.jpg",
+    "imagen": "img/color/LIMG2.png",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -518,7 +642,7 @@
     "categoria": "Herramientas",
     "subcategoria": "Limas",
     "descripcion": "Lima profesional grano 100/180. Pack x12 unidades. Entre 3.000 y 5.000 pasadas. Materiales alemanes.",
-    "imagen": "img/maragel/LIMG3.jpg",
+    "imagen": "img/color/LIMG3.png",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -533,7 +657,7 @@
     "categoria": "Herramientas",
     "subcategoria": "Limas",
     "descripcion": "Lima profesional grano 240/240. Pack x12 unidades. Entre 3.000 y 5.000 pasadas. Materiales alemanes.",
-    "imagen": "img/maragel/LIMG4.jpg",
+    "imagen": "img/color/LIMG4.png",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -548,7 +672,7 @@
     "categoria": "Herramientas",
     "subcategoria": "Limas",
     "descripcion": "Lima Maragel Selene. Pack x4 unidades.",
-    "imagen": "img/maragel/LIMSELE.jpg",
+    "imagen": "img/color/LIMG15.png",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -563,7 +687,7 @@
     "categoria": "Herramientas",
     "subcategoria": "Limas",
     "descripcion": "Lima Maragel Lunar. Pack x5 unidades.",
-    "imagen": "img/maragel/LIMLUNAR.jpg",
+    "imagen": "img/color/LIMG20.png",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -3844,12 +3968,22 @@
     "precio_mayorista": "pendiente",
     "categoria": "Herramientas",
     "subcategoria": "Imanes",
-    "descripcion": "Imán multifuncional 5 en 1: punta plana ancha, punta redonda, flor central, punta T y punta doble cuadrada.",
-    "imagen": "img/maragel/C821.jpg",
+    "descripcion": "Imán multifuncional 5 en 1: punta plana ancha, redonda, flor central, T y doble cuadrada.",
+    "imagen": "img/color/C821_1.png",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
-    "color_blob": ""
+    "color_blob": "",
+    "galeria": [
+      {
+        "tipo": "foto",
+        "src": "img/color/C821_1.png"
+      },
+      {
+        "tipo": "foto",
+        "src": "img/color/C821_2.png"
+      }
+    ]
   },
   {
     "id": "pct1",
@@ -3860,11 +3994,25 @@
     "categoria": "Herramientas",
     "subcategoria": "Imanes",
     "descripcion": "Imán 3 en 1 con potente campo magnético. Punta redonda, punta plana y efecto flor.",
-    "imagen": "img/maragel/CT1.jpg",
+    "imagen": "img/color/CT1_1.png",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
-    "color_blob": ""
+    "color_blob": "",
+    "galeria": [
+      {
+        "tipo": "foto",
+        "src": "img/color/CT1_1.png"
+      },
+      {
+        "tipo": "foto",
+        "src": "img/color/CT1_2.png"
+      },
+      {
+        "tipo": "foto",
+        "src": "img/color/CT1_3.png"
+      }
+    ]
   },
   {
     "id": "pct2",
@@ -3874,8 +4022,8 @@
     "precio_mayorista": "pendiente",
     "categoria": "Herramientas",
     "subcategoria": "Imanes",
-    "descripcion": "Imán rectangular para efectos tridimensionales. Funda de silicona. Hasta 10 efectos distintos.",
-    "imagen": "img/maragel/CT2.jpg",
+    "descripcion": "Imán rectangular para efectos tridimensionales. Hasta 10 efectos distintos.",
+    "imagen": "img/color/CT2.png",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -3890,7 +4038,7 @@
     "categoria": "Herramientas",
     "subcategoria": "Imanes",
     "descripcion": "Imán de doble cabezal multidireccional. Efectos: rayo, S, media luna, X, ola y más.",
-    "imagen": "img/maragel/CT3.jpg",
+    "imagen": "img/color/CT3.png",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -3904,7 +4052,7 @@
     "precio_mayorista": "pendiente",
     "categoria": "Uñas Soft Gel",
     "subcategoria": "Soft Gel por Forma",
-    "descripcion": "Uñas Soft Gel forma cuadrada talla small. 550 piezas en 10 tamaños. Tecnología japonesa.",
+    "descripcion": "550 piezas en 10 tamaños. Tecnología japonesa.",
     "imagen": "img/maragel/PRESQ-S.jpg",
     "agotado": false,
     "nuevo": false,
@@ -3919,7 +4067,7 @@
     "precio_mayorista": "pendiente",
     "categoria": "Uñas Soft Gel",
     "subcategoria": "Soft Gel por Forma",
-    "descripcion": "Uñas Soft Gel forma cuadrada talla medium. 550 piezas en 10 tamaños.",
+    "descripcion": "550 piezas en 10 tamaños. Tecnología japonesa.",
     "imagen": "img/maragel/PRESQ-M.jpg",
     "agotado": false,
     "nuevo": false,
@@ -3934,7 +4082,7 @@
     "precio_mayorista": "pendiente",
     "categoria": "Uñas Soft Gel",
     "subcategoria": "Soft Gel por Forma",
-    "descripcion": "Uñas Soft Gel forma oval talla medium. 550 piezas en 10 tamaños.",
+    "descripcion": "550 piezas en 10 tamaños. Tecnología japonesa.",
     "imagen": "img/maragel/PREOV-M.jpg",
     "agotado": false,
     "nuevo": false,
@@ -3949,8 +4097,8 @@
     "precio_mayorista": "pendiente",
     "categoria": "Uñas Soft Gel",
     "subcategoria": "Soft Gel por Forma",
-    "descripcion": "Uñas Soft Gel forma stiletto talla large. 440 piezas en 10 tamaños.",
-    "imagen": "img/maragel/PREES-L.jpg",
+    "descripcion": "440 piezas en 10 tamaños. Tecnología japonesa.",
+    "imagen": "img/color/PREES-L 1.JPG",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -3965,7 +4113,7 @@
     "categoria": "Apliques y Stickers",
     "subcategoria": "Apliques para Uñas",
     "descripcion": "",
-    "imagen": "img/maragel/MNG1.jpg",
+    "imagen": "img/color/MNG1.jpg",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -3980,7 +4128,7 @@
     "categoria": "Apliques y Stickers",
     "subcategoria": "Apliques para Uñas",
     "descripcion": "",
-    "imagen": "img/maragel/MNG2.jpg",
+    "imagen": "img/color/MNG2.jpg",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -3995,7 +4143,7 @@
     "categoria": "Apliques y Stickers",
     "subcategoria": "Apliques para Uñas",
     "descripcion": "",
-    "imagen": "img/maragel/MNG3.jpg",
+    "imagen": "img/color/MNG3.jpg",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -4010,7 +4158,7 @@
     "categoria": "Apliques y Stickers",
     "subcategoria": "Apliques para Uñas",
     "descripcion": "",
-    "imagen": "img/maragel/MNG4.jpg",
+    "imagen": "img/color/MNG4.jpg",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -4025,7 +4173,7 @@
     "categoria": "Apliques y Stickers",
     "subcategoria": "Apliques para Uñas",
     "descripcion": "",
-    "imagen": "img/maragel/MNG5.jpg",
+    "imagen": "img/color/MNG5.jpg",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -4040,7 +4188,7 @@
     "categoria": "Apliques y Stickers",
     "subcategoria": "Apliques para Uñas",
     "descripcion": "",
-    "imagen": "img/maragel/MNG6.jpg",
+    "imagen": "img/color/MNG6.jpg",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -4055,7 +4203,7 @@
     "categoria": "Apliques y Stickers",
     "subcategoria": "Apliques para Uñas",
     "descripcion": "",
-    "imagen": "img/maragel/MNG7.jpg",
+    "imagen": "img/color/MNG7.jpg",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -4070,7 +4218,7 @@
     "categoria": "Apliques y Stickers",
     "subcategoria": "Apliques para Uñas",
     "descripcion": "",
-    "imagen": "img/maragel/MNG8.jpg",
+    "imagen": "img/color/MNG8.jpg",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -4085,7 +4233,7 @@
     "categoria": "Apliques y Stickers",
     "subcategoria": "Apliques para Uñas",
     "descripcion": "",
-    "imagen": "img/maragel/MNG9.jpg",
+    "imagen": "img/color/MNG9.jpg",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -4100,7 +4248,7 @@
     "categoria": "Apliques y Stickers",
     "subcategoria": "Apliques para Uñas",
     "descripcion": "",
-    "imagen": "img/maragel/MNG14.jpg",
+    "imagen": "img/color/MNG14.jpg",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -4115,7 +4263,7 @@
     "categoria": "Apliques y Stickers",
     "subcategoria": "Apliques para Uñas",
     "descripcion": "",
-    "imagen": "img/maragel/MNG17.jpg",
+    "imagen": "img/color/MNG17.jpg",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -4130,7 +4278,7 @@
     "categoria": "Apliques y Stickers",
     "subcategoria": "Apliques para Uñas",
     "descripcion": "",
-    "imagen": "img/maragel/MNG18.jpg",
+    "imagen": "img/color/MNG18.jpg",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -4145,7 +4293,7 @@
     "categoria": "Apliques y Stickers",
     "subcategoria": "Apliques para Uñas",
     "descripcion": "",
-    "imagen": "img/maragel/MNG19.jpg",
+    "imagen": "img/color/MNG19.jpg",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -4160,7 +4308,7 @@
     "categoria": "Apliques y Stickers",
     "subcategoria": "Stickers",
     "descripcion": "",
-    "imagen": "img/maragel/STICKER1.jpg",
+    "imagen": "img/color/STICKER1_1.png",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
@@ -4175,10 +4323,32 @@
     "categoria": "Apliques y Stickers",
     "subcategoria": "Stickers",
     "descripcion": "",
-    "imagen": "img/maragel/STICKER3-2.jpg",
+    "imagen": "img/color/STICKER3-2_1.png",
     "agotado": false,
     "nuevo": false,
     "best_seller": false,
-    "color_blob": ""
+    "color_blob": "",
+    "galeria": [
+      {
+        "tipo": "foto",
+        "src": "img/color/STICKER3-2_1.png"
+      },
+      {
+        "tipo": "foto",
+        "src": "img/color/STICKER3-2_2.png"
+      },
+      {
+        "tipo": "foto",
+        "src": "img/color/STICKER3-2_3.png"
+      },
+      {
+        "tipo": "foto",
+        "src": "img/color/STICKER3-2_4.png"
+      },
+      {
+        "tipo": "foto",
+        "src": "img/color/STICKER3-2_5.png"
+      }
+    ]
   }
 ]
