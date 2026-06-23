@@ -656,8 +656,10 @@
 <script>
 /* ──────────────────────────────────────────────────────────────
    PRODUCTOS — cargado desde productos.json vía fetch()
+   PRECIOS_MAY — cargado desde precios-mayorista.json vía fetch()
 ──────────────────────────────────────────────────────────────── */
 let PRODUCTOS = [];
+let PRECIOS_MAY = {};
 
 
 
@@ -757,8 +759,7 @@ function filterCat(cat) {
 /* ── MODO DETAL / MAYORISTA ─────────────────── */
 function getDisplayPrice(p) {
   if (currentMode === 'mayorista') {
-    if (!p.precio_mayorista || p.precio_mayorista === 'pendiente') return 'Consultar';
-    return fmtPrice(p.precio_mayorista);
+    const _may = PRECIOS_MAY[p.referencia]; if (!_may || _may === 'pendiente') return 'Consultar'; return fmtPrice(_may);
   }
   return fmtPrice(p.precio);
 }
@@ -852,7 +853,7 @@ function productCard(p) {
   const hasMedia = p.galeria && p.galeria.length > 1;
   const hasVideo = hasMedia && p.galeria.some(g => g.tipo==='video');
   const pDetal    = fmtPrice(p.precio);
-  const pMay      = (!p.precio_mayorista || p.precio_mayorista === 'pendiente') ? 'Consultar' : fmtPrice(p.precio_mayorista);
+  const pMay      = (()=>{ const m=PRECIOS_MAY[p.referencia]; return (!m||m==='pendiente')?'Consultar':fmtPrice(m); })();
   return `
   <div class="product-card${p.agotado?' is-agotado':''}"
        style="--pc:${c}"
@@ -1024,7 +1025,7 @@ function buildModalInfo() {
   const p = gProd;
   const subLabel = p.subcategoria && p.subcategoria!==p.categoria ? p.subcategoria : p.categoria;
   const pDetal   = fmtPrice(p.precio);
-  const pMay     = (!p.precio_mayorista || p.precio_mayorista === 'pendiente') ? 'Consultar' : fmtPrice(p.precio_mayorista);
+  const pMay     = (()=>{ const m=PRECIOS_MAY[p.referencia]; return (!m||m==='pendiente')?'Consultar':fmtPrice(m); })();
   document.getElementById('modal-info').innerHTML = `
     <div class="modal-info-top">
       <div class="modal-cat">${subLabel}</div>
@@ -1071,14 +1072,17 @@ function init(data) {
   renderProducts();
 }
 
-fetch('productos.json')
-  .then(r => r.json())
-  .then(init)
-  .catch(err => {
-    console.error('Error cargando productos.json:', err);
-    document.getElementById('products-main').innerHTML =
-      '<p style="padding:40px;text-align:center;color:#888">No se pudieron cargar los productos. Verifica que productos.json esté en la misma carpeta.</p>';
-  });
+Promise.all([
+  fetch('productos.json').then(r => r.json()),
+  fetch('precios-mayorista.json').then(r => r.json())
+]).then(([productos, precios]) => {
+  PRECIOS_MAY = precios;
+  init(productos);
+}).catch(err => {
+  console.error('Error cargando datos:', err);
+  document.getElementById('products-main').innerHTML =
+    '<p style="padding:40px;text-align:center;color:#888">No se pudieron cargar los productos. Verifica que productos.json y precios-mayorista.json estén en la misma carpeta.</p>';
+});
 /* ── CONTRASEÑA MAYORISTA ───────────────────── */
 const PW_MAYORISTA = '000000';
 
